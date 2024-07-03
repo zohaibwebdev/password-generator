@@ -3,3 +3,9 @@
     justify-content: space-between;
     margin-bottom: 4px;
 }
+.container{
+    width: 100%;
+}
+.range{
+    width: 100%;
+}

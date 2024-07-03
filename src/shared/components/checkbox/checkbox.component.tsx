@@ -3,9 +3,15 @@ import styles from "./checkbox.module.css"
 const CheckBoxs = () => {
     
     const[uppercase, setUppercase] = useState<boolean>(false)
-    const[lowercase, setLowercase] = useState<boolean>(false)
-    const[numbers, setNumbers] = useState<boolean>(false)
+    const[lowercase, setLowercase] = useState<boolean>(true)
+    const[numbers, setNumbers] = useState<boolean>(true)
     const[specialChar, setSpecialChar] = useState<boolean>(false)
+    const [value, setValue] = useState(8);
+
+    const handleChange = (event:React.ChangeEvent<HTMLInputElement>) => {
+        const newValue = Number(event.target.value);
+        setValue(newValue);
+    }
 
     const handleUppercase = (event: React.ChangeEvent<HTMLInputElement>)=>{
         setUppercase(event.target.checked)
@@ -26,6 +32,17 @@ const CheckBoxs = () => {
 
   return (
     <div>
+        <div className={styles.container}>
+        <input
+          type='range'
+          min='8'
+          max='50'
+          value={value}
+          onChange={handleChange}
+          className={styles.range}
+        />
+        <div>Password Length: {value}</div>
+      </div>
         <div className={styles.checkbox}>
             <label>UpperCase</label>
             <input type="checkbox" checked={uppercase} onChange={handleUppercase} />
