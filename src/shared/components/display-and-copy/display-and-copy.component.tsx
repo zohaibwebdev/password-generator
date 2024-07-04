@@ -7,15 +7,19 @@ const DisplayAndCopy = () => {
   const handleReGen = ()=>{
     passwordGen()
   }
+
+  function handleCopy(){
+     navigator.clipboard.writeText(password);
+     alert('Copied your secure password to  clipboard!');
+  }
   return (
-    <>
     <div className={styles.container}>
-        <input type="text" className={styles.input} readOnly value={password}/>
-        <button className={styles.button}>copy</button>
-        <button className={styles.reButton} onClick={handleReGen}>🔃</button>
-    </div>
-    
-    </>
+            <div className={styles.inputContainer}>
+                <input type="text" className={styles.input} readOnly value={password} />
+                <button className={styles.reButton} onClick={handleReGen}>🔃</button>
+            </div>
+            <button className={styles.button} onClick={handleCopy}>copy</button>
+        </div>
   )
 }
 

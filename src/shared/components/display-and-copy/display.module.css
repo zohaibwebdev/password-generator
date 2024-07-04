@@ -1,23 +1,31 @@
 .button{
-    background: greenyellow;
+    background: #309794;
     padding: 4px 10px;
     border-radius: 6px;
+    color:black;
+    font-weight: bold;
 }
 .input{
     border: 2px solid gray;
     border-radius: 8px;
-    position: relative;
     padding: 5px;
-    width: 80%;
-    padding-left: 35px;
+    width: 100%; 
+    padding-right: 40px;
+    box-sizing: border-box;
 }
 .container{
     display: flex;
     justify-content: space-between;
 }
+.inputContainer {
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+}
 .reButton{
     position: absolute;
+    right: 0;
     font-size: 24px;
-
+    box-sizing: border-box;
 
 }

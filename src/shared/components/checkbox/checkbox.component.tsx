@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import styles from "./checkbox.module.css"
+import { usePasswordContext } from '@/context/passwordContext/password-context'
 const CheckBoxs = () => {
     
     const[uppercase, setUppercase] = useState<boolean>(false)
@@ -8,25 +9,36 @@ const CheckBoxs = () => {
     const[specialChar, setSpecialChar] = useState<boolean>(false)
     const [value, setValue] = useState(8);
 
+    const {setLength, setUpper, setLower, setNum, setSpecialCh} = usePasswordContext()
+
     const handleChange = (event:React.ChangeEvent<HTMLInputElement>) => {
         const newValue = Number(event.target.value);
         setValue(newValue);
+        setLength(newValue)
     }
 
     const handleUppercase = (event: React.ChangeEvent<HTMLInputElement>)=>{
-        setUppercase(event.target.checked)
+        const isChecked = event.target.checked
+        setUppercase(isChecked);
+        setUpper(isChecked);
     }
 
     const handleLowercase = (event: React.ChangeEvent<HTMLInputElement>)=>{
-        setLowercase(event.target.checked)
+        const isChecked = event.target.checked
+        setLowercase(isChecked)
+        setLower(isChecked)
     }
 
     const handleNumbers = (event: React.ChangeEvent<HTMLInputElement>)=>{
-        setNumbers(event.target.checked)
+        const isChecked = event.target.checked
+        setNumbers(isChecked)
+        setNum(isChecked)
     }
 
     const handleSpecialChar = (event: React.ChangeEvent<HTMLInputElement>)=>{
-        setSpecialChar(event.target.checked)
+        const isChecked = event.target.checked
+        setSpecialChar(isChecked)
+        setSpecialCh(isChecked)
     }
     
 
