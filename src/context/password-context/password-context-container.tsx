@@ -1,5 +1,5 @@
 import React, { FC, PropsWithChildren, useEffect, useLayoutEffect, useState } from 'react'
-import { IPasswordGen, defaultPasswordGen } from './types'
+import { IPasswordGen, defaultPasswordGen } from './password-context-interfaces'
 import { PasswordContextProvider } from './password-context'
 
 const PasswordGenContainer:FC<PropsWithChildren> = ({children}) => {
