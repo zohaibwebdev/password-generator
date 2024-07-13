@@ -1,5 +1,5 @@
 import { createContext, useContext } from "react";
-import { IPasswordGen, defaultPasswordGen } from "./types";
+import { IPasswordGen, defaultPasswordGen } from "./password-context-interfaces";
 
 const PasswordContext = createContext<IPasswordGen>(defaultPasswordGen)
 
